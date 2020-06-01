@@ -1,0 +1,132 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  --veryDarkBlue: hsl(234, 12%, 34%);
+  --grayishBlue: hsl(229, 6%, 66%);
+  --veryLightGray: hsl(0, 0%, 98%);
+
+  --fw-l: 600;
+  --fw-m: 400;
+  --fw-s: 200;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+
+  height: 100vh;
+}
+
+.main {
+  padding-top: 90px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  text-align: center;
+  max-width: 505px;
+}
+
+.main__title {
+  font-weight: var(--fw-s);
+  font-size: 2rem;
+  color: var(--veryDarkBlue);
+
+  margin-bottom: 1rem;
+}
+
+.main h1 {
+  color: var(--veryDarkBlue);
+  font-size: 2rem;
+  font-weight: var(--fw-l);
+
+  margin-bottom: 2rem;
+}
+
+.main p {
+  font-size: 1rem;
+  color: var(--grayishBlue);
+}
+
+.cards {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: repeat(4, 140px);
+  gap: 0 30px;
+  grid-template-areas:
+    ". a ."
+    "b a c"
+    "b d c"
+    ". d .";
+}
+
+@media screen and (max-width: 1150px) {
+  .cards {
+    display: block;
+  }
+
+  .cards > .card {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
+.cards > .card {
+  position: relative;
+  padding: 35px;
+  height: 250px;
+  width: 350px;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px var(--grayishBlue);
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: var(--veryDarkBlue);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 0.8rem;
+  color: var(--grayishBlue);
+  font-weight: var(--fw-m);
+  line-height: 1.8;
+}
+
+.card img {
+  position: absolute;
+  right: 35px;
+  bottom: 35px;
+}
+
+.first {
+  grid-area: a;
+  border-top: 4px solid var(--red);
+}
+
+.second {
+  grid-area: b;
+  border-top: 4px solid var(--cyan);
+}
+
+.third {
+  grid-area: c;
+  border-top: 4px solid var(--blue);
+}
+
+.fourth {
+  grid-area: d;
+  border-top: 4px solid var(--orange);
+}
